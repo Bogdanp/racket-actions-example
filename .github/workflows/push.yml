@@ -6,14 +6,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        racket-variant: ['regular', 'CS']
-        racket-version: ['7.6', '7.7']
+        racket-variant: ['BC', 'CS']
+        racket-version: ['7.8', '7.9']
     name: Test on ${{ matrix.racket-variant }} Racket
     steps:
       - name: Checkout
         uses: actions/checkout@master
       - name: Install Racket
-        uses: Bogdanp/setup-racket@v0.8
+        uses: Bogdanp/setup-racket@v0.11
         with:
           architecture: 'x64'
           distribution: 'full'
